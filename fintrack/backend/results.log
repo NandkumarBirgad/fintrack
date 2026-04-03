@@ -1,0 +1,24 @@
+OK [200] GET /health -- FinTrack API is running
+XX [409] POST /auth/register -- Email is already registered.
+OK [200] POST /auth/login (admin) -- Login successful.
+OK [200] POST /auth/login (viewer) -- Login successful.
+OK [200] POST /auth/login (analyst) -- Login successful.
+OK [200] GET /auth/me -- Success
+OK [200] POST /auth/refresh -- Token refreshed.
+OK [200] GET /transactions (admin) -- Transactions retrieved.
+OK [200] GET /transactions?type=income (analyst) -- Transactions retrieved.
+OK [201] POST /transactions (admin create) -- Transaction created.
+OK [200] GET /transactions/36 -- Success
+OK [200] PUT /transactions/36 -- Transaction updated.
+OK [403] POST /transactions (viewer-DENY) -- Access denied. Required role(s): admin.
+OK [200] GET /analytics/summary -- Financial summary retrieved.
+OK [200] GET /analytics/monthly (admin) -- Monthly breakdown retrieved.
+OK [200] GET /analytics/categories (admin) -- Category breakdown retrieved.
+OK [200] GET /analytics/recent -- Recent transactions retrieved.
+OK [403] GET /analytics/monthly (viewer-DENY) -- Access denied. Required role(s): analyst, admin.
+OK [200] GET /users (admin) -- 7 user(s) found.
+OK [403] GET /users (viewer-DENY) -- Access denied. Required role(s): admin.
+OK [200] DELETE /transactions/36 -- Transaction deleted.
+OK [401] GET /transactions (no-auth-DENY) -- Missing Authorization Header
+
+TOTAL=22 OK=21 FAIL=1

@@ -1,0 +1,26 @@
+.layout-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--bg-primary);
+}
+
+.sidebar {
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  border-radius: 0;
+  border-right: 1px solid var(--border-subtle);
+  border-left: none;
+  border-top: none;
+  border-bottom: none;
+  z-index: 20;
+}
+
+.layout-content {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
+  position: relative;
+}

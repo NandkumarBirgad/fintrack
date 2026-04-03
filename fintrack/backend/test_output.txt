@@ -1,0 +1,81 @@
+=================================================================
+BACKEND API TEST RESULTS
+=================================================================
+
+  PASS [200] GET /health
+  PASS [201] POST /auth/register
+  PASS [200] POST /auth/login (admin)
+  PASS [200] POST /auth/login (viewer)
+  PASS [200] POST /auth/login (analyst)
+  FAIL [422] GET /auth/me (admin)
+  FAIL [422] POST /auth/refresh
+  FAIL [422] GET /transactions (admin)
+  FAIL [422] GET /transactions?type=income (analyst)
+  FAIL [422] POST /transactions (admin create)
+  PASS [422] POST /transactions (viewer - should 403)
+  FAIL [422] GET /analytics/summary (admin)
+  FAIL [422] GET /analytics/monthly (admin)
+  FAIL [422] GET /analytics/categories (admin)
+  FAIL [422] GET /analytics/recent (admin)
+  PASS [422] GET /analytics/monthly (viewer - should 403)
+  FAIL [422] GET /users (admin)
+  PASS [422] GET /users (viewer - should 403)
+  PASS [401] GET /transactions (no token - should 401)
+
+=================================================================
+  TOTAL: 19 | PASSED: 9 | FAILED: 10
+=================================================================
+
+
+FAILED TEST DETAILS:
+-----------------------------------------------------------------
+
+GET /auth/me (admin) [422]:
+{
+  "msg": "Subject must be a string"
+}
+
+POST /auth/refresh [422]:
+{
+  "msg": "Subject must be a string"
+}
+
+GET /transactions (admin) [422]:
+{
+  "msg": "Subject must be a string"
+}
+
+GET /transactions?type=income (analyst) [422]:
+{
+  "msg": "Subject must be a string"
+}
+
+POST /transactions (admin create) [422]:
+{
+  "msg": "Subject must be a string"
+}
+
+GET /analytics/summary (admin) [422]:
+{
+  "msg": "Subject must be a string"
+}
+
+GET /analytics/monthly (admin) [422]:
+{
+  "msg": "Subject must be a string"
+}
+
+GET /analytics/categories (admin) [422]:
+{
+  "msg": "Subject must be a string"
+}
+
+GET /analytics/recent (admin) [422]:
+{
+  "msg": "Subject must be a string"
+}
+
+GET /users (admin) [422]:
+{
+  "msg": "Subject must be a string"
+}

@@ -1,0 +1,15 @@
+/* Analytics page specific styles */
+.loader {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-secondary);
+}
+
+.recharts-wrapper {
+  margin: 0 auto;
+}
+
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke-opacity: 0.2;
+}
